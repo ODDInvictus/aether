@@ -1,0 +1,6 @@
+[spotify]
+url = "http://aether:24879"
+ws = "aether:24879"
+
+[fallback]
+playlist = "spotify:playlist:3vleaMH00xMCNXOWHsqm73"
