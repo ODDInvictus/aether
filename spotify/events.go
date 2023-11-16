@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ODDInvictus/aether/logger"
+	"github.com/KokopelliMusic/go-lib/logger"
 	"github.com/gorilla/websocket"
 	"github.com/spf13/viper"
 )

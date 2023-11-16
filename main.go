@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/KokopelliMusic/go-lib/logger"
 	"github.com/ODDInvictus/aether/http"
-	"github.com/ODDInvictus/aether/logger"
 	"github.com/ODDInvictus/aether/spotify"
 	"github.com/ODDInvictus/aether/utils"
 )

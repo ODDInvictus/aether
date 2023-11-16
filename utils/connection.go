@@ -3,7 +3,7 @@ package utils
 import (
 	"net/http"
 
-	"github.com/ODDInvictus/aether/logger"
+	"github.com/KokopelliMusic/go-lib/logger"
 	"github.com/spf13/viper"
 )
 

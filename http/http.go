@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ODDInvictus/aether/logger"
+	"github.com/KokopelliMusic/go-lib/logger"
 	"github.com/ODDInvictus/aether/spotify"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -30,6 +31,10 @@ func Init() *gin.Engine {
 
 	r.Use(gin.Recovery())
 
+  r.Use(cors.New(cors.Config{
+    AllowOrigins:     []string{"*"},
+    AllowCredentials: true,
+  }))
 
 	apiRoutes()
 
@@ -63,9 +68,13 @@ func apiRoutes() {
 		var params PlaylistPlay
 
 		if c.ShouldBind(&params) == nil {
-			ok, err := spotify.Load(params.SpotifyID, true, true)
+			if ok, err := spotify.Load(params.SpotifyID, true, true); !ok {
+				c.JSON(500, gin.H{
+					"message": fmt.Sprint(err),
+				})
+			}
 
-			if !ok {
+			if ok, err := spotify.Next(); !ok {
 				c.JSON(500, gin.H{
 					"message": fmt.Sprint(err),
 				})

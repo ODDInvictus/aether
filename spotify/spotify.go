@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ODDInvictus/aether/logger"
+	"github.com/KokopelliMusic/go-lib/logger"
 	"github.com/spf13/viper"
 )
 
